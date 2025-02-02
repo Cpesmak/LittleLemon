@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Menu, Booking
 from .serializers import MenuItemSerializer, BookingSerializer
 from rest_framework import generics, viewsets
-from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 def index(request):
