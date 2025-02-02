@@ -14,15 +14,15 @@ class MenuViewTest(TestCase):
             {
                 'id': self.item1.id,  # Ensure this matches serializer output
                 'title': self.item1.title,
-                'price': str(self.item1.price),  # Convert to string if serializer does
+                'price': f"{self.item1.price:.2f}",   # Convert to string if serializer does
                 'inventory': self.item1.inventory
             },
             {
                 'id': self.item2.id,
                 'title': self.item2.title,
-                'price': str(self.item2.price),
+                'price': f"{self.item2.price:.2f}",
                 'inventory': self.item2.inventory
             }
         ]
 
-        self.assertEqual(serializer, expected_data)
+        self.assertEqual(serializer.data, expected_data)
